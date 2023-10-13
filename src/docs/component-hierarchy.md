@@ -1,0 +1,14 @@
+
+-AllClientsTable
+    - TableHeader
+    - SingleClientTable
+        - NameCell
+        - WeightCell
+        - HeightCell
+        - BMICell
+        - BMIClassCell
+        - NotesCell
+        - EditButton
+        - SaveButton
+        - DeleteButton
+    - AddButton
