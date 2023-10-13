@@ -9,7 +9,14 @@ import './SingleClientTable.css'
 import ModeButtons from './ModeButtons'
 
 
-const SingleClientTable = () => {
+
+
+const SingleClientTable = ({ isEditing, startingData }) => {
+
+   
+
+const { name, weight, height, notes } = startingData
+
   return (
     <>
 <tr>
@@ -17,13 +24,28 @@ const SingleClientTable = () => {
         <table className="ClientCell">
             <tbody>
                 {/* below we are giving each component props (isEditing and value) */}
-                <ModeButtons isEditing={false}/>
-                <NameCell isEditing={false} value="Jackie"/>
-                <WeightCell  isEditing={false} value={155}/>
-                <HeightCell isEditing={false} value={68}/>
-                <BMICell/>
-                <BMIClassCell/>
-                <NotesCell isEditing={false} value="noties"/>
+                <ModeButtons 
+                    isEditing={isEditing}  
+                />
+                <NameCell 
+                    isEditing={isEditing} 
+                    value={name}
+                />
+                <WeightCell  
+                    isEditing={isEditing} 
+                    value={weight}
+                />
+                <HeightCell 
+                    isEditing={isEditing} 
+                    value={height}
+                />
+                <tr><td>BMI: {BMICell(weight, height)} </td></tr>
+                <tr><td>BMI Class: {BMIClassCell(BMICell(weight, height))}</td></tr>
+                <NotesCell 
+                    isEditing={isEditing} 
+                    value={notes}
+                />
+                
             </tbody>
         </table>
     </td>

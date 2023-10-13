@@ -4,7 +4,23 @@ import SingleClientTable from './SingleClientTable'
 import AddButton from './AddButton'
 
 
-const AllClientsTable = () => {
+const AllClientsTable = ({ startingData }) => {
+
+    const client = startingData.map((clientInfo) => {
+        const { name, weight, height, notes } = clientInfo
+        const idEditing = clientInfo.isEditing
+
+        return (
+           <SingleClientTable
+                key={name}
+                startingData={{ name, weight, height, notes}}
+                isEditing={false}
+                />
+                
+        )
+    })
+        
+   
   return (
     <div>
         <table>
@@ -13,7 +29,7 @@ const AllClientsTable = () => {
             </thead>
 
             <tbody>
-                <SingleClientTable/>
+                {client}
             </tbody>
 
             <tfoot>
@@ -23,5 +39,4 @@ const AllClientsTable = () => {
     </div>
   )
 }
-
 export default AllClientsTable

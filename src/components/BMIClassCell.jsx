@@ -1,17 +1,20 @@
 import React from 'react'
+import BMICell from './BMICell'
 
-const BMIClassCell = () => {
-  return (
-    <tr>
-        <td>
-            <label htmlFor='BMIClass'>BMI Class: </label>
-            <input
-                type='text'
-                id='BMIClass'
-            />
-        </td>
-    </tr>
-  )
+const BMIClassCell = (num) => {
+  if (num < 18) {
+  return 'Underweight'
+  }
+  if (num >= 18 && num < 24) {
+    return 'Healthy Weight'
+  }
+  if (num >= 24 && num < 30) {
+    return 'Overweight'
+  }
+  else {
+    return 'Obese'
+  }
+
 }
 
 export default BMIClassCell

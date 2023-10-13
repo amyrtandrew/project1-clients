@@ -14,7 +14,7 @@ const NameCell = ({ isEditing, value }) => {
   ) : (
     <tr>
       <td>
-        {value}
+        Name: {value}
       </td>
     </tr>
   )

@@ -16,7 +16,7 @@ const HeightCell = ({ isEditing, value }) => {
   ) : (
     <tr>
       <td>
-        {value}
+        Height: {value}in
       </td>
     </tr>
   )

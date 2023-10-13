@@ -16,7 +16,7 @@ const WeightCell = ({ isEditing, value }) => {
   ) : (
     <tr>
       <td>
-        {value}
+        Weight: {value}lbs
       </td>
     </tr>
   )

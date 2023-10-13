@@ -16,7 +16,7 @@ const NotesCell = ({ isEditing, value }) => {
   ) : (
     <tr>
       <td>
-        {value}
+        Notes: {value}
       </td>
     </tr>
   )
