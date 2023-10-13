@@ -1,15 +1,21 @@
 import React from 'react'
 
-const NameCell = () => {
-  return (
+const NameCell = ({ isEditing, value }) => {
+  return isEditing ? (
     <tr>
         <td>
-            <label htmlFor='name'>Name:</label>
             <input
                 type='text'
-                id='name'
+                value={value}
+                onChange={(e) => onValueChange(e.target.value)}
             />
         </td>
+    </tr>
+  ) : (
+    <tr>
+      <td>
+        {value}
+      </td>
     </tr>
   )
 }

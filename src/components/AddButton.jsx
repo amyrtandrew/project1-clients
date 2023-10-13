@@ -4,7 +4,7 @@ const AddButton = () => {
   return (
     <tr>
         <td>
-            <button>Add</button>
+            <button>Add Client</button>
         </td>
     </tr>
   )

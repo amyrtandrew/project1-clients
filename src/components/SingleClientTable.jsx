@@ -16,13 +16,14 @@ const SingleClientTable = () => {
     <td>
         <table className="ClientCell">
             <tbody>
-                <ModeButtons/>
-                <NameCell/>
-                <WeightCell/>
-                <HeightCell/>
+                {/* below we are giving each component props (isEditing and value) */}
+                <ModeButtons isEditing={false}/>
+                <NameCell isEditing={false} value="Jackie"/>
+                <WeightCell  isEditing={false} value={155}/>
+                <HeightCell isEditing={false} value={68}/>
                 <BMICell/>
                 <BMIClassCell/>
-                <NotesCell/>
+                <NotesCell isEditing={false} value="noties"/>
             </tbody>
         </table>
     </td>
