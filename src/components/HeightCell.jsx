@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HeightCell = ({ isEditing, value }) => {
+const HeightCell = ({ isEditing, value, onValueChange }) => {
   return isEditing ? (
     <tr>
         <td>

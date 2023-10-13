@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WeightCell = ({ isEditing, value }) => {
+const WeightCell = ({ isEditing, value, onValueChange }) => {
   return isEditing ? (
     <tr>
         <td>

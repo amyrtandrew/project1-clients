@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NotesCell = ({ isEditing, value }) => {
+const NotesCell = ({ isEditing, value, onValueChange }) => {
   return isEditing ? (
     <tr>
         <td>

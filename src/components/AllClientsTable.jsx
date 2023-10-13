@@ -2,19 +2,23 @@ import React from 'react'
 import TableHeader from './TableHeader'
 import SingleClientTable from './SingleClientTable'
 import AddButton from './AddButton'
+import { useState } from 'react'
+import ModeButtons from './ModeButtons'
 
 
 const AllClientsTable = ({ startingData }) => {
 
+    const [currentData, setCurrentData] = useState(startingData)
+
     const client = startingData.map((clientInfo) => {
         const { name, weight, height, notes } = clientInfo
-        const idEditing = clientInfo.isEditing
+        const isEditing = clientInfo.isEditing
 
         return (
            <SingleClientTable
                 key={name}
                 startingData={{ name, weight, height, notes}}
-                isEditing={false}
+                isEditing={isEditing}
                 />
                 
         )

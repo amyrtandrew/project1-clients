@@ -4,18 +4,18 @@ import WeightCell from './WeightCell'
 import HeightCell from './HeightCell'
 import NotesCell from './NotesCell'
 
-const ModeButtons = ({ isEditing }) => {
+const ModeButtons = ({ isEditing, saveClick, editClick }) => {
   return isEditing ? (
   <tr>
     <td>
-        <button>Save</button>
+        <button onClick={saveClick}>Save</button>
         <button>Delete Client</button>
     </td>
   </tr>
   ) : (
   <tr>
     <td>
-        <button>Edit</button>
+        <button onClick={editClick}>Edit</button>
     </td>
     </tr>
   )
