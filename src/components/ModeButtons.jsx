@@ -1,15 +1,11 @@
 import React from 'react'
-import NameCell from './NameCell'
-import WeightCell from './WeightCell'
-import HeightCell from './HeightCell'
-import NotesCell from './NotesCell'
 
-const ModeButtons = ({ isEditing, saveClick, editClick }) => {
+const ModeButtons = ({ isEditing, saveClick, editClick, deleteClick }) => {
   return isEditing ? (
   <tr>
     <td>
         <button onClick={saveClick}>Save</button>
-        <button>Delete Client</button>
+        <button onClick={deleteClick}>Delete Client</button>
     </td>
   </tr>
   ) : (

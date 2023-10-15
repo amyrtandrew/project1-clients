@@ -1,10 +1,10 @@
 import React from 'react'
 
-const AddButton = () => {
+const AddButton = ({ addClick }) => {
   return (
     <tr>
         <td>
-            <button>Add Client</button>
+            <button onClick={addClick}>Add Client</button>
         </td>
     </tr>
   )

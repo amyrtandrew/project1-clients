@@ -8,11 +8,12 @@ import NotesCell from './NotesCell'
 import './SingleClientTable.css'
 import ModeButtons from './ModeButtons'
 import { useState } from 'react'
+import axios from 'axios'
 
 
 
 
-const SingleClientTable = ({ isEditing, startingData }) => {
+const SingleClientTable = ({ isEditing, startingData, deleteFunc }) => {
 
     const [editMode, setEditMode] = useState(isEditing)
     const [name, setName] = useState(startingData.name)
@@ -20,8 +21,23 @@ const SingleClientTable = ({ isEditing, startingData }) => {
     const [height, setHeight] = useState(startingData.height)
     const [notes, setNotes] = useState(startingData.notes)
 
-    const setEditing = () => setEditMode(true)
-    const setNotEditing = () => setEditMode(false)
+    const normalMode = async () => {
+        let obj = {
+            name: name,
+            weight: weight,
+            height: height,
+            notes: notes,
+        }
+    const response = await axios.put(`/editClients/${clientNum}`, obj)
+
+    if (!response.data.error) {
+        setEditMode(false)
+    } else {
+        alert('idk what is going on')
+    }
+}
+
+    const changeMode = () => setEditMode(true)
 
   return (
     <>
@@ -32,26 +48,31 @@ const SingleClientTable = ({ isEditing, startingData }) => {
                 {/* below we are giving each component props (isEditing and value) */}
                 <ModeButtons 
                     isEditing={editMode}  
-                    editClick={setEditing}
-                    saveClick={setNotEditing}
+                    editClick={changeMode}
+                    saveClick={normalMode}
+                    deleteClick={deleteFunc}
                 />
                 <NameCell 
                     isEditing={editMode} 
                     value={name}
+                    onValueChange={setName}
                 />
                 <WeightCell  
                     isEditing={editMode} 
                     value={weight}
+                    onValueChange={setWeight}
                 />
                 <HeightCell 
                     isEditing={editMode} 
                     value={height}
+                    onValueChange={setHeight}
                 />
                 <tr><td>BMI: {BMICell(weight, height)} </td></tr>
                 <tr><td>BMI Class: {BMIClassCell(BMICell(weight, height))}</td></tr>
                 <NotesCell 
                     isEditing={editMode} 
                     value={notes}
+                    onValueChange={setNotes}
                 />
                 
             </tbody>
