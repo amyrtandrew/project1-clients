@@ -11,7 +11,7 @@ const ModeButtons = ({ isEditing, saveClick, editClick, deleteClick }) => {
   ) : (
   <tr>
     <td>
-        <button onClick={editClick}>Edit</button>
+        <button id='editButton' onClick={editClick}>Edit</button>
     </td>
     </tr>
   )

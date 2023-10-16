@@ -5,7 +5,7 @@ import HeightCell from './HeightCell'
 import BMICell from './BMICell'
 import BMIClassCell from './BMIClassCell'
 import NotesCell from './NotesCell'
-import './SingleClientTable.css'
+import './AllClientsTable.css'
 import ModeButtons from './ModeButtons'
 import { useState } from 'react'
 import axios from 'axios'
@@ -13,7 +13,7 @@ import axios from 'axios'
 
 
 
-const SingleClientTable = ({ isEditing, startingData, deleteFunc }) => {
+const SingleClientTable = ({ isEditing, startingData, deleteFunc, clientNum }) => {
 
     const [editMode, setEditMode] = useState(isEditing)
     const [name, setName] = useState(startingData.name)
@@ -33,7 +33,7 @@ const SingleClientTable = ({ isEditing, startingData, deleteFunc }) => {
     if (!response.data.error) {
         setEditMode(false)
     } else {
-        alert('idk what is going on')
+        console.log('idk what is going on')
     }
 }
 
@@ -45,7 +45,6 @@ const SingleClientTable = ({ isEditing, startingData, deleteFunc }) => {
     <td>
         <table className="ClientCell">
             <tbody>
-                {/* below we are giving each component props (isEditing and value) */}
                 <ModeButtons 
                     isEditing={editMode}  
                     editClick={changeMode}

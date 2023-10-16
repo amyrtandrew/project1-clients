@@ -1,10 +1,10 @@
-import React from 'react'
+
 
 const AddButton = ({ addClick }) => {
   return (
     <tr>
         <td>
-            <button onClick={addClick}>Add Client</button>
+            <button id='addButton' onClick={addClick} >Add Client</button>
         </td>
     </tr>
   )

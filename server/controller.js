@@ -49,7 +49,7 @@ let STARTER_DATA = [
         clientInfo.notes = notes
 
         res.send(clientInfo)
-    },
+    }
 
   }
 

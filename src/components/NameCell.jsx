@@ -13,8 +13,8 @@ const NameCell = ({ isEditing, value, onValueChange }) => {
     </tr>
   ) : (
     <tr>
-      <td>
-        Name: {value}
+      <td id='nameCell'>
+        {value}
       </td>
     </tr>
   )

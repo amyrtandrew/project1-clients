@@ -6,9 +6,10 @@ import { useState } from 'react'
 import ModeButtons from './ModeButtons'
 import createClient from '../docs/clientCreator.js'
 import axios from 'axios'
+import './AllClientsTable.css'
 
-// let globalId = 4
-const AllClientsTable = ({ startingData }) => {
+let globalId = 4
+const AllClientsTable = ({ startingData}) => {
     const [currentData, setCurrentData] = useState(startingData)
     const client = currentData.map((clientInfo) => {
         const { clientNum, name, weight, height, notes } = clientInfo
